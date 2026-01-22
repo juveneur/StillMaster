@@ -1,0 +1,40 @@
+# Stage 1: Build
+FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
+WORKDIR /src
+
+# Copy solution file
+COPY StillMaster.sln ./
+
+# Copy all project files
+COPY backend/StillMaster.API/StillMaster.API.csproj backend/StillMaster.API/
+COPY backend/StillMaster.Application/StillMaster.Application.csproj backend/StillMaster.Application/
+COPY backend/StillMaster.Core/StillMaster.Core.csproj backend/StillMaster.Core/
+COPY backend/StillMaster.Infrastructure/StillMaster.Infrastructure.csproj backend/StillMaster.Infrastructure/
+
+# Restore dependencies using solution file
+RUN dotnet restore StillMaster.sln
+
+# Copy all backend source code
+COPY backend/ backend/
+
+# Build and publish
+WORKDIR /src/backend/StillMaster.API
+RUN dotnet publish -c Release -o /app/publish
+
+# Stage 2: Runtime
+FROM mcr.microsoft.com/dotnet/aspnet:10.0 AS runtime
+WORKDIR /app
+
+# Copy published files
+COPY --from=build /app/publish .
+
+# Expose port (Railway will override this with PORT env var)
+EXPOSE 8080
+
+# Set environment variables
+ENV ASPNETCORE_URLS=http://+:8080
+ENV ASPNETCORE_ENVIRONMENT=Production
+
+# Start the application
+ENTRYPOINT ["dotnet", "StillMaster.API.dll"]
+
