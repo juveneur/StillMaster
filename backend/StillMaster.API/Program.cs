@@ -93,15 +93,40 @@ if (app.Environment.IsDevelopment())
     app.MapOpenApi();
 }
 
-// Seed database
+// Seed database with error handling
 using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
-    var context = services.GetRequiredService<ApplicationDbContext>();
-    var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
-    var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
+    var logger = services.GetRequiredService<ILogger<Program>>();
     
-    await DbInitializer.SeedDataAsync(context, userManager, roleManager);
+    try
+    {
+        logger.LogInformation("Starting database seeding...");
+        
+        var context = services.GetRequiredService<ApplicationDbContext>();
+        var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
+        var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
+        
+        await DbInitializer.SeedDataAsync(context, userManager, roleManager);
+        
+        logger.LogInformation("Database seeding completed successfully!");
+        
+        // Log admin user status
+        var adminUser = await userManager.FindByEmailAsync("admin@stillmaster.com");
+        if (adminUser != null)
+        {
+            logger.LogInformation("Admin user verified: {Email}", adminUser.Email);
+        }
+        else
+        {
+            logger.LogError("Admin user NOT found after seeding!");
+        }
+    }
+    catch (Exception ex)
+    {
+        logger.LogError(ex, "An error occurred while seeding the database: {Message}", ex.Message);
+        // Don't throw - let app start even if seeding fails
+    }
 }
 
 app.UseCors("AllowFrontend");
