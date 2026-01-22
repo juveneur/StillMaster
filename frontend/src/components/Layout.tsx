@@ -1,5 +1,5 @@
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useAuthStore } from '../store/authStore';
 import './Layout.css';
 
@@ -8,15 +8,52 @@ interface LayoutProps {
 }
 
 export default function Layout({ children }: LayoutProps) {
-  const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [sidebarOpen, setSidebarOpen] = useState(window.innerWidth > 768);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const location = useLocation();
   const navigate = useNavigate();
   const user = useAuthStore((state) => state.user);
   const logout = useAuthStore((state) => state.logout);
 
+  // Handle window resize
+  useEffect(() => {
+    const handleResize = () => {
+      const mobile = window.innerWidth <= 768;
+      setIsMobile(mobile);
+      // On desktop, keep sidebar open by default
+      if (!mobile && !sidebarOpen) {
+        setSidebarOpen(true);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [sidebarOpen]);
+
+  // Close sidebar on mobile when route changes
+  useEffect(() => {
+    if (isMobile) {
+      setSidebarOpen(false);
+    }
+  }, [location.pathname, isMobile]);
+
   const handleLogout = () => {
     logout();
     navigate('/login');
+  };
+
+  // Close sidebar when clicking on main content (mobile only)
+  const handleMainContentClick = () => {
+    if (isMobile && sidebarOpen) {
+      setSidebarOpen(false);
+    }
+  };
+
+  // Close sidebar when clicking backdrop
+  const handleBackdropClick = () => {
+    if (isMobile) {
+      setSidebarOpen(false);
+    }
   };
 
   const navItems = [
@@ -53,6 +90,11 @@ export default function Layout({ children }: LayoutProps) {
       </nav>
 
       <div className="layout-content">
+        {/* Backdrop for mobile when sidebar is open */}
+        {isMobile && sidebarOpen && (
+          <div className="sidebar-backdrop" onClick={handleBackdropClick} />
+        )}
+
         <aside className={`sidebar ${sidebarOpen ? 'open' : 'closed'}`}>
           <nav className="sidebar-nav">
             {navItems.map((item) => (
@@ -68,7 +110,10 @@ export default function Layout({ children }: LayoutProps) {
           </nav>
         </aside>
 
-        <main className={`main-content ${sidebarOpen ? 'sidebar-open' : 'sidebar-closed'}`}>
+        <main 
+          className={`main-content ${sidebarOpen ? 'sidebar-open' : 'sidebar-closed'}`}
+          onClick={handleMainContentClick}
+        >
           {children}
         </main>
       </div>

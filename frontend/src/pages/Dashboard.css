@@ -27,11 +27,19 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   text-decoration: none;
   transition: transform 0.3s, box-shadow 0.3s;
+  /* Better touch target */
+  min-height: 160px;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .module-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.module-card:active {
+  transform: translateY(-2px);
 }
 
 .module-icon {
@@ -48,5 +56,67 @@
   margin: 0;
   color: #666;
   font-size: 14px;
+}
+
+/* Tablet styles */
+@media (max-width: 1024px) {
+  .dashboard-content {
+    padding: 30px 20px;
+  }
+
+  .modules-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .dashboard-content {
+    padding: 20px 15px;
+  }
+
+  .dashboard-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .welcome-text {
+    margin: 0 0 25px 0;
+    font-size: 14px;
+  }
+
+  .modules-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .module-card {
+    padding: 25px;
+    min-height: 140px;
+  }
+
+  .module-icon {
+    font-size: 40px;
+    margin-bottom: 12px;
+  }
+
+  .module-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .module-card p {
+    font-size: 13px;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .dashboard-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .module-card {
+    padding: 20px;
+  }
 }
 
