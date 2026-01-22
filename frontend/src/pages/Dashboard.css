@@ -1,0 +1,52 @@
+.dashboard-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.dashboard-content h1 {
+  color: #333;
+  margin: 0 0 10px 0;
+}
+
+.welcome-text {
+  color: #666;
+  margin: 0 0 40px 0;
+}
+
+.modules-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.module-card {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.module-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.module-icon {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.module-card h3 {
+  margin: 0 0 10px 0;
+  color: #333;
+}
+
+.module-card p {
+  margin: 0;
+  color: #666;
+  font-size: 14px;
+}
+

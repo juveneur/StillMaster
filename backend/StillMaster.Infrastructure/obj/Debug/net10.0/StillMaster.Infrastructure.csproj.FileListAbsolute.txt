@@ -1,0 +1,15 @@
+/Users/tijones/Documents/CursorProjects/StillMaster/backend/StillMaster.Infrastructure/obj/Debug/net10.0/StillMaster.Infrastructure.csproj.AssemblyReference.cache
+/Users/tijones/Documents/CursorProjects/StillMaster/backend/StillMaster.Infrastructure/obj/Debug/net10.0/StillMaster.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+/Users/tijones/Documents/CursorProjects/StillMaster/backend/StillMaster.Infrastructure/obj/Debug/net10.0/StillMaster.Infrastructure.AssemblyInfoInputs.cache
+/Users/tijones/Documents/CursorProjects/StillMaster/backend/StillMaster.Infrastructure/obj/Debug/net10.0/StillMaster.Infrastructure.AssemblyInfo.cs
+/Users/tijones/Documents/CursorProjects/StillMaster/backend/StillMaster.Infrastructure/obj/Debug/net10.0/StillMaster.Infrastructure.csproj.CoreCompileInputs.cache
+/Users/tijones/Documents/CursorProjects/StillMaster/backend/StillMaster.Infrastructure/bin/Debug/net10.0/StillMaster.Infrastructure.deps.json
+/Users/tijones/Documents/CursorProjects/StillMaster/backend/StillMaster.Infrastructure/bin/Debug/net10.0/StillMaster.Infrastructure.dll
+/Users/tijones/Documents/CursorProjects/StillMaster/backend/StillMaster.Infrastructure/bin/Debug/net10.0/StillMaster.Infrastructure.pdb
+/Users/tijones/Documents/CursorProjects/StillMaster/backend/StillMaster.Infrastructure/bin/Debug/net10.0/StillMaster.Core.dll
+/Users/tijones/Documents/CursorProjects/StillMaster/backend/StillMaster.Infrastructure/bin/Debug/net10.0/StillMaster.Core.pdb
+/Users/tijones/Documents/CursorProjects/StillMaster/backend/StillMaster.Infrastructure/obj/Debug/net10.0/StillMas.8CEBD25E.Up2Date
+/Users/tijones/Documents/CursorProjects/StillMaster/backend/StillMaster.Infrastructure/obj/Debug/net10.0/StillMaster.Infrastructure.dll
+/Users/tijones/Documents/CursorProjects/StillMaster/backend/StillMaster.Infrastructure/obj/Debug/net10.0/refint/StillMaster.Infrastructure.dll
+/Users/tijones/Documents/CursorProjects/StillMaster/backend/StillMaster.Infrastructure/obj/Debug/net10.0/StillMaster.Infrastructure.pdb
+/Users/tijones/Documents/CursorProjects/StillMaster/backend/StillMaster.Infrastructure/obj/Debug/net10.0/ref/StillMaster.Infrastructure.dll

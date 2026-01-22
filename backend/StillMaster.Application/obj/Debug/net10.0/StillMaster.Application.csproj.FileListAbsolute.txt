@@ -1,0 +1,15 @@
+/Users/tijones/Documents/CursorProjects/StillMaster/backend/StillMaster.Application/obj/Debug/net10.0/StillMaster.Application.csproj.AssemblyReference.cache
+/Users/tijones/Documents/CursorProjects/StillMaster/backend/StillMaster.Application/obj/Debug/net10.0/StillMaster.Application.GeneratedMSBuildEditorConfig.editorconfig
+/Users/tijones/Documents/CursorProjects/StillMaster/backend/StillMaster.Application/obj/Debug/net10.0/StillMaster.Application.AssemblyInfoInputs.cache
+/Users/tijones/Documents/CursorProjects/StillMaster/backend/StillMaster.Application/obj/Debug/net10.0/StillMaster.Application.AssemblyInfo.cs
+/Users/tijones/Documents/CursorProjects/StillMaster/backend/StillMaster.Application/obj/Debug/net10.0/StillMaster.Application.csproj.CoreCompileInputs.cache
+/Users/tijones/Documents/CursorProjects/StillMaster/backend/StillMaster.Application/bin/Debug/net10.0/StillMaster.Application.deps.json
+/Users/tijones/Documents/CursorProjects/StillMaster/backend/StillMaster.Application/bin/Debug/net10.0/StillMaster.Application.dll
+/Users/tijones/Documents/CursorProjects/StillMaster/backend/StillMaster.Application/bin/Debug/net10.0/StillMaster.Application.pdb
+/Users/tijones/Documents/CursorProjects/StillMaster/backend/StillMaster.Application/bin/Debug/net10.0/StillMaster.Core.dll
+/Users/tijones/Documents/CursorProjects/StillMaster/backend/StillMaster.Application/bin/Debug/net10.0/StillMaster.Core.pdb
+/Users/tijones/Documents/CursorProjects/StillMaster/backend/StillMaster.Application/obj/Debug/net10.0/StillMas.A63633F8.Up2Date
+/Users/tijones/Documents/CursorProjects/StillMaster/backend/StillMaster.Application/obj/Debug/net10.0/StillMaster.Application.dll
+/Users/tijones/Documents/CursorProjects/StillMaster/backend/StillMaster.Application/obj/Debug/net10.0/refint/StillMaster.Application.dll
+/Users/tijones/Documents/CursorProjects/StillMaster/backend/StillMaster.Application/obj/Debug/net10.0/StillMaster.Application.pdb
+/Users/tijones/Documents/CursorProjects/StillMaster/backend/StillMaster.Application/obj/Debug/net10.0/ref/StillMaster.Application.dll
